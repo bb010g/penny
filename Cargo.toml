@@ -1,0 +1,11 @@
+[package]
+authors = ["Brayden Banks <bb010g@gmail.com>"]
+name = "penny"
+version = "0.1.0"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/bb010g/penny"
+description = "ISO 4217–compliant currency library"
+
+[dependencies]
+phf = "0.7.20"
