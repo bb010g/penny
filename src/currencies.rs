@@ -9,6 +9,7 @@ pub const AED: Currency<'static> = Currency {
     number: 784,
     minor_units: Some(2),
 };
+pub const AED_REF: &'static Currency<'static> = &AED;
 
 pub const AFN: Currency<'static> = Currency {
     code: "AFN",
@@ -18,6 +19,7 @@ pub const AFN: Currency<'static> = Currency {
     number: 971,
     minor_units: Some(2),
 };
+pub const AFN_REF: &'static Currency<'static> = &AFN;
 
 pub const ALL: Currency<'static> = Currency {
     code: "ALL",
@@ -27,6 +29,7 @@ pub const ALL: Currency<'static> = Currency {
     number: 8,
     minor_units: Some(2),
 };
+pub const ALL_REF: &'static Currency<'static> = &ALL;
 
 pub const AMD: Currency<'static> = Currency {
     code: "AMD",
@@ -36,6 +39,7 @@ pub const AMD: Currency<'static> = Currency {
     number: 51,
     minor_units: Some(2),
 };
+pub const AMD_REF: &'static Currency<'static> = &AMD;
 
 pub const ANG: Currency<'static> = Currency {
     code: "ANG",
@@ -45,6 +49,7 @@ pub const ANG: Currency<'static> = Currency {
     number: 532,
     minor_units: Some(2),
 };
+pub const ANG_REF: &'static Currency<'static> = &ANG;
 
 pub const AOA: Currency<'static> = Currency {
     code: "AOA",
@@ -54,6 +59,7 @@ pub const AOA: Currency<'static> = Currency {
     number: 973,
     minor_units: Some(2),
 };
+pub const AOA_REF: &'static Currency<'static> = &AOA;
 
 pub const ARS: Currency<'static> = Currency {
     code: "ARS",
@@ -63,6 +69,7 @@ pub const ARS: Currency<'static> = Currency {
     number: 32,
     minor_units: Some(2),
 };
+pub const ARS_REF: &'static Currency<'static> = &ARS;
 
 pub const AUD: Currency<'static> = Currency {
     code: "AUD",
@@ -79,6 +86,7 @@ pub const AUD: Currency<'static> = Currency {
     number: 36,
     minor_units: Some(2),
 };
+pub const AUD_REF: &'static Currency<'static> = &AUD;
 
 pub const AWG: Currency<'static> = Currency {
     code: "AWG",
@@ -88,6 +96,7 @@ pub const AWG: Currency<'static> = Currency {
     number: 533,
     minor_units: Some(2),
 };
+pub const AWG_REF: &'static Currency<'static> = &AWG;
 
 pub const AZN: Currency<'static> = Currency {
     code: "AZN",
@@ -97,6 +106,7 @@ pub const AZN: Currency<'static> = Currency {
     number: 944,
     minor_units: Some(2),
 };
+pub const AZN_REF: &'static Currency<'static> = &AZN;
 
 pub const BAM: Currency<'static> = Currency {
     code: "BAM",
@@ -106,6 +116,7 @@ pub const BAM: Currency<'static> = Currency {
     number: 977,
     minor_units: Some(2),
 };
+pub const BAM_REF: &'static Currency<'static> = &BAM;
 
 pub const BBD: Currency<'static> = Currency {
     code: "BBD",
@@ -115,6 +126,7 @@ pub const BBD: Currency<'static> = Currency {
     number: 52,
     minor_units: Some(2),
 };
+pub const BBD_REF: &'static Currency<'static> = &BBD;
 
 pub const BDT: Currency<'static> = Currency {
     code: "BDT",
@@ -124,6 +136,7 @@ pub const BDT: Currency<'static> = Currency {
     number: 50,
     minor_units: Some(2),
 };
+pub const BDT_REF: &'static Currency<'static> = &BDT;
 
 pub const BGN: Currency<'static> = Currency {
     code: "BGN",
@@ -133,6 +146,7 @@ pub const BGN: Currency<'static> = Currency {
     number: 975,
     minor_units: Some(2),
 };
+pub const BGN_REF: &'static Currency<'static> = &BGN;
 
 pub const BHD: Currency<'static> = Currency {
     code: "BHD",
@@ -142,6 +156,7 @@ pub const BHD: Currency<'static> = Currency {
     number: 48,
     minor_units: Some(3),
 };
+pub const BHD_REF: &'static Currency<'static> = &BHD;
 
 pub const BIF: Currency<'static> = Currency {
     code: "BIF",
@@ -151,6 +166,7 @@ pub const BIF: Currency<'static> = Currency {
     number: 108,
     minor_units: Some(0),
 };
+pub const BIF_REF: &'static Currency<'static> = &BIF;
 
 pub const BMD: Currency<'static> = Currency {
     code: "BMD",
@@ -160,6 +176,7 @@ pub const BMD: Currency<'static> = Currency {
     number: 60,
     minor_units: Some(2),
 };
+pub const BMD_REF: &'static Currency<'static> = &BMD;
 
 pub const BND: Currency<'static> = Currency {
     code: "BND",
@@ -169,6 +186,7 @@ pub const BND: Currency<'static> = Currency {
     number: 96,
     minor_units: Some(2),
 };
+pub const BND_REF: &'static Currency<'static> = &BND;
 
 pub const BOB: Currency<'static> = Currency {
     code: "BOB",
@@ -178,6 +196,7 @@ pub const BOB: Currency<'static> = Currency {
     number: 68,
     minor_units: Some(2),
 };
+pub const BOB_REF: &'static Currency<'static> = &BOB;
 
 pub const BOV: Currency<'static> = Currency {
     code: "BOV",
@@ -187,6 +206,7 @@ pub const BOV: Currency<'static> = Currency {
     number: 984,
     minor_units: Some(2),
 };
+pub const BOV_REF: &'static Currency<'static> = &BOV;
 
 pub const BRL: Currency<'static> = Currency {
     code: "BRL",
@@ -196,6 +216,7 @@ pub const BRL: Currency<'static> = Currency {
     number: 986,
     minor_units: Some(2),
 };
+pub const BRL_REF: &'static Currency<'static> = &BRL;
 
 pub const BSD: Currency<'static> = Currency {
     code: "BSD",
@@ -205,6 +226,7 @@ pub const BSD: Currency<'static> = Currency {
     number: 44,
     minor_units: Some(2),
 };
+pub const BSD_REF: &'static Currency<'static> = &BSD;
 
 pub const BTN: Currency<'static> = Currency {
     code: "BTN",
@@ -214,6 +236,7 @@ pub const BTN: Currency<'static> = Currency {
     number: 64,
     minor_units: Some(2),
 };
+pub const BTN_REF: &'static Currency<'static> = &BTN;
 
 pub const BWP: Currency<'static> = Currency {
     code: "BWP",
@@ -223,6 +246,7 @@ pub const BWP: Currency<'static> = Currency {
     number: 72,
     minor_units: Some(2),
 };
+pub const BWP_REF: &'static Currency<'static> = &BWP;
 
 pub const BYN: Currency<'static> = Currency {
     code: "BYN",
@@ -232,6 +256,7 @@ pub const BYN: Currency<'static> = Currency {
     number: 933,
     minor_units: Some(2),
 };
+pub const BYN_REF: &'static Currency<'static> = &BYN;
 
 pub const BYR: Currency<'static> = Currency {
     code: "BYR",
@@ -241,6 +266,7 @@ pub const BYR: Currency<'static> = Currency {
     number: 974,
     minor_units: Some(0),
 };
+pub const BYR_REF: &'static Currency<'static> = &BYR;
 
 pub const BZD: Currency<'static> = Currency {
     code: "BZD",
@@ -250,6 +276,7 @@ pub const BZD: Currency<'static> = Currency {
     number: 84,
     minor_units: Some(2),
 };
+pub const BZD_REF: &'static Currency<'static> = &BZD;
 
 pub const CAD: Currency<'static> = Currency {
     code: "CAD",
@@ -259,6 +286,7 @@ pub const CAD: Currency<'static> = Currency {
     number: 124,
     minor_units: Some(2),
 };
+pub const CAD_REF: &'static Currency<'static> = &CAD;
 
 pub const CDF: Currency<'static> = Currency {
     code: "CDF",
@@ -268,6 +296,7 @@ pub const CDF: Currency<'static> = Currency {
     number: 976,
     minor_units: Some(2),
 };
+pub const CDF_REF: &'static Currency<'static> = &CDF;
 
 pub const CHE: Currency<'static> = Currency {
     code: "CHE",
@@ -277,6 +306,7 @@ pub const CHE: Currency<'static> = Currency {
     number: 947,
     minor_units: Some(2),
 };
+pub const CHE_REF: &'static Currency<'static> = &CHE;
 
 pub const CHF: Currency<'static> = Currency {
     code: "CHF",
@@ -286,6 +316,7 @@ pub const CHF: Currency<'static> = Currency {
     number: 756,
     minor_units: Some(2),
 };
+pub const CHF_REF: &'static Currency<'static> = &CHF;
 
 pub const CHW: Currency<'static> = Currency {
     code: "CHW",
@@ -295,6 +326,7 @@ pub const CHW: Currency<'static> = Currency {
     number: 948,
     minor_units: Some(2),
 };
+pub const CHW_REF: &'static Currency<'static> = &CHW;
 
 pub const CLF: Currency<'static> = Currency {
     code: "CLF",
@@ -304,6 +336,7 @@ pub const CLF: Currency<'static> = Currency {
     number: 990,
     minor_units: Some(4),
 };
+pub const CLF_REF: &'static Currency<'static> = &CLF;
 
 pub const CLP: Currency<'static> = Currency {
     code: "CLP",
@@ -313,6 +346,7 @@ pub const CLP: Currency<'static> = Currency {
     number: 152,
     minor_units: Some(0),
 };
+pub const CLP_REF: &'static Currency<'static> = &CLP;
 
 pub const CNY: Currency<'static> = Currency {
     code: "CNY",
@@ -322,6 +356,7 @@ pub const CNY: Currency<'static> = Currency {
     number: 156,
     minor_units: Some(2),
 };
+pub const CNY_REF: &'static Currency<'static> = &CNY;
 
 pub const COP: Currency<'static> = Currency {
     code: "COP",
@@ -331,6 +366,7 @@ pub const COP: Currency<'static> = Currency {
     number: 170,
     minor_units: Some(2),
 };
+pub const COP_REF: &'static Currency<'static> = &COP;
 
 pub const COU: Currency<'static> = Currency {
     code: "COU",
@@ -340,6 +376,7 @@ pub const COU: Currency<'static> = Currency {
     number: 970,
     minor_units: Some(2),
 };
+pub const COU_REF: &'static Currency<'static> = &COU;
 
 pub const CRC: Currency<'static> = Currency {
     code: "CRC",
@@ -349,6 +386,7 @@ pub const CRC: Currency<'static> = Currency {
     number: 188,
     minor_units: Some(2),
 };
+pub const CRC_REF: &'static Currency<'static> = &CRC;
 
 pub const CUC: Currency<'static> = Currency {
     code: "CUC",
@@ -358,6 +396,7 @@ pub const CUC: Currency<'static> = Currency {
     number: 931,
     minor_units: Some(2),
 };
+pub const CUC_REF: &'static Currency<'static> = &CUC;
 
 pub const CUP: Currency<'static> = Currency {
     code: "CUP",
@@ -367,6 +406,7 @@ pub const CUP: Currency<'static> = Currency {
     number: 192,
     minor_units: Some(2),
 };
+pub const CUP_REF: &'static Currency<'static> = &CUP;
 
 pub const CVE: Currency<'static> = Currency {
     code: "CVE",
@@ -376,6 +416,7 @@ pub const CVE: Currency<'static> = Currency {
     number: 132,
     minor_units: Some(2),
 };
+pub const CVE_REF: &'static Currency<'static> = &CVE;
 
 pub const CZK: Currency<'static> = Currency {
     code: "CZK",
@@ -385,6 +426,7 @@ pub const CZK: Currency<'static> = Currency {
     number: 203,
     minor_units: Some(2),
 };
+pub const CZK_REF: &'static Currency<'static> = &CZK;
 
 pub const DJF: Currency<'static> = Currency {
     code: "DJF",
@@ -394,6 +436,7 @@ pub const DJF: Currency<'static> = Currency {
     number: 262,
     minor_units: Some(0),
 };
+pub const DJF_REF: &'static Currency<'static> = &DJF;
 
 pub const DKK: Currency<'static> = Currency {
     code: "DKK",
@@ -403,6 +446,7 @@ pub const DKK: Currency<'static> = Currency {
     number: 208,
     minor_units: Some(2),
 };
+pub const DKK_REF: &'static Currency<'static> = &DKK;
 
 pub const DOP: Currency<'static> = Currency {
     code: "DOP",
@@ -412,6 +456,7 @@ pub const DOP: Currency<'static> = Currency {
     number: 214,
     minor_units: Some(2),
 };
+pub const DOP_REF: &'static Currency<'static> = &DOP;
 
 pub const DZD: Currency<'static> = Currency {
     code: "DZD",
@@ -421,6 +466,7 @@ pub const DZD: Currency<'static> = Currency {
     number: 12,
     minor_units: Some(2),
 };
+pub const DZD_REF: &'static Currency<'static> = &DZD;
 
 pub const EGP: Currency<'static> = Currency {
     code: "EGP",
@@ -430,6 +476,7 @@ pub const EGP: Currency<'static> = Currency {
     number: 818,
     minor_units: Some(2),
 };
+pub const EGP_REF: &'static Currency<'static> = &EGP;
 
 pub const ERN: Currency<'static> = Currency {
     code: "ERN",
@@ -439,6 +486,7 @@ pub const ERN: Currency<'static> = Currency {
     number: 232,
     minor_units: Some(2),
 };
+pub const ERN_REF: &'static Currency<'static> = &ERN;
 
 pub const ETB: Currency<'static> = Currency {
     code: "ETB",
@@ -448,6 +496,7 @@ pub const ETB: Currency<'static> = Currency {
     number: 230,
     minor_units: Some(2),
 };
+pub const ETB_REF: &'static Currency<'static> = &ETB;
 
 pub const EUR: Currency<'static> = Currency {
     code: "EUR",
@@ -491,6 +540,7 @@ pub const EUR: Currency<'static> = Currency {
     number: 978,
     minor_units: Some(2),
 };
+pub const EUR_REF: &'static Currency<'static> = &EUR;
 
 pub const FJD: Currency<'static> = Currency {
     code: "FJD",
@@ -500,6 +550,7 @@ pub const FJD: Currency<'static> = Currency {
     number: 242,
     minor_units: Some(2),
 };
+pub const FJD_REF: &'static Currency<'static> = &FJD;
 
 pub const FKP: Currency<'static> = Currency {
     code: "FKP",
@@ -509,6 +560,7 @@ pub const FKP: Currency<'static> = Currency {
     number: 238,
     minor_units: Some(2),
 };
+pub const FKP_REF: &'static Currency<'static> = &FKP;
 
 pub const GBP: Currency<'static> = Currency {
     code: "GBP",
@@ -521,6 +573,7 @@ pub const GBP: Currency<'static> = Currency {
     number: 826,
     minor_units: Some(2),
 };
+pub const GBP_REF: &'static Currency<'static> = &GBP;
 
 pub const GEL: Currency<'static> = Currency {
     code: "GEL",
@@ -530,6 +583,7 @@ pub const GEL: Currency<'static> = Currency {
     number: 981,
     minor_units: Some(2),
 };
+pub const GEL_REF: &'static Currency<'static> = &GEL;
 
 pub const GHS: Currency<'static> = Currency {
     code: "GHS",
@@ -539,6 +593,7 @@ pub const GHS: Currency<'static> = Currency {
     number: 936,
     minor_units: Some(2),
 };
+pub const GHS_REF: &'static Currency<'static> = &GHS;
 
 pub const GIP: Currency<'static> = Currency {
     code: "GIP",
@@ -548,6 +603,7 @@ pub const GIP: Currency<'static> = Currency {
     number: 292,
     minor_units: Some(2),
 };
+pub const GIP_REF: &'static Currency<'static> = &GIP;
 
 pub const GMD: Currency<'static> = Currency {
     code: "GMD",
@@ -557,6 +613,7 @@ pub const GMD: Currency<'static> = Currency {
     number: 270,
     minor_units: Some(2),
 };
+pub const GMD_REF: &'static Currency<'static> = &GMD;
 
 pub const GNF: Currency<'static> = Currency {
     code: "GNF",
@@ -566,6 +623,7 @@ pub const GNF: Currency<'static> = Currency {
     number: 324,
     minor_units: Some(0),
 };
+pub const GNF_REF: &'static Currency<'static> = &GNF;
 
 pub const GTQ: Currency<'static> = Currency {
     code: "GTQ",
@@ -575,6 +633,7 @@ pub const GTQ: Currency<'static> = Currency {
     number: 320,
     minor_units: Some(2),
 };
+pub const GTQ_REF: &'static Currency<'static> = &GTQ;
 
 pub const GYD: Currency<'static> = Currency {
     code: "GYD",
@@ -584,6 +643,7 @@ pub const GYD: Currency<'static> = Currency {
     number: 328,
     minor_units: Some(2),
 };
+pub const GYD_REF: &'static Currency<'static> = &GYD;
 
 pub const HKD: Currency<'static> = Currency {
     code: "HKD",
@@ -593,6 +653,7 @@ pub const HKD: Currency<'static> = Currency {
     number: 344,
     minor_units: Some(2),
 };
+pub const HKD_REF: &'static Currency<'static> = &HKD;
 
 pub const HNL: Currency<'static> = Currency {
     code: "HNL",
@@ -602,6 +663,7 @@ pub const HNL: Currency<'static> = Currency {
     number: 340,
     minor_units: Some(2),
 };
+pub const HNL_REF: &'static Currency<'static> = &HNL;
 
 pub const HRK: Currency<'static> = Currency {
     code: "HRK",
@@ -611,6 +673,7 @@ pub const HRK: Currency<'static> = Currency {
     number: 191,
     minor_units: Some(2),
 };
+pub const HRK_REF: &'static Currency<'static> = &HRK;
 
 pub const HTG: Currency<'static> = Currency {
     code: "HTG",
@@ -620,6 +683,7 @@ pub const HTG: Currency<'static> = Currency {
     number: 332,
     minor_units: Some(2),
 };
+pub const HTG_REF: &'static Currency<'static> = &HTG;
 
 pub const HUF: Currency<'static> = Currency {
     code: "HUF",
@@ -629,6 +693,7 @@ pub const HUF: Currency<'static> = Currency {
     number: 348,
     minor_units: Some(2),
 };
+pub const HUF_REF: &'static Currency<'static> = &HUF;
 
 pub const IDR: Currency<'static> = Currency {
     code: "IDR",
@@ -638,6 +703,7 @@ pub const IDR: Currency<'static> = Currency {
     number: 360,
     minor_units: Some(2),
 };
+pub const IDR_REF: &'static Currency<'static> = &IDR;
 
 pub const ILS: Currency<'static> = Currency {
     code: "ILS",
@@ -647,6 +713,7 @@ pub const ILS: Currency<'static> = Currency {
     number: 376,
     minor_units: Some(2),
 };
+pub const ILS_REF: &'static Currency<'static> = &ILS;
 
 pub const INR: Currency<'static> = Currency {
     code: "INR",
@@ -656,6 +723,7 @@ pub const INR: Currency<'static> = Currency {
     number: 356,
     minor_units: Some(2),
 };
+pub const INR_REF: &'static Currency<'static> = &INR;
 
 pub const IQD: Currency<'static> = Currency {
     code: "IQD",
@@ -665,6 +733,7 @@ pub const IQD: Currency<'static> = Currency {
     number: 368,
     minor_units: Some(3),
 };
+pub const IQD_REF: &'static Currency<'static> = &IQD;
 
 pub const IRR: Currency<'static> = Currency {
     code: "IRR",
@@ -674,6 +743,7 @@ pub const IRR: Currency<'static> = Currency {
     number: 364,
     minor_units: Some(2),
 };
+pub const IRR_REF: &'static Currency<'static> = &IRR;
 
 pub const ISK: Currency<'static> = Currency {
     code: "ISK",
@@ -683,6 +753,7 @@ pub const ISK: Currency<'static> = Currency {
     number: 352,
     minor_units: Some(0),
 };
+pub const ISK_REF: &'static Currency<'static> = &ISK;
 
 pub const JMD: Currency<'static> = Currency {
     code: "JMD",
@@ -692,6 +763,7 @@ pub const JMD: Currency<'static> = Currency {
     number: 388,
     minor_units: Some(2),
 };
+pub const JMD_REF: &'static Currency<'static> = &JMD;
 
 pub const JOD: Currency<'static> = Currency {
     code: "JOD",
@@ -701,6 +773,7 @@ pub const JOD: Currency<'static> = Currency {
     number: 400,
     minor_units: Some(3),
 };
+pub const JOD_REF: &'static Currency<'static> = &JOD;
 
 pub const JPY: Currency<'static> = Currency {
     code: "JPY",
@@ -710,6 +783,7 @@ pub const JPY: Currency<'static> = Currency {
     number: 392,
     minor_units: Some(0),
 };
+pub const JPY_REF: &'static Currency<'static> = &JPY;
 
 pub const KES: Currency<'static> = Currency {
     code: "KES",
@@ -719,6 +793,7 @@ pub const KES: Currency<'static> = Currency {
     number: 404,
     minor_units: Some(2),
 };
+pub const KES_REF: &'static Currency<'static> = &KES;
 
 pub const KGS: Currency<'static> = Currency {
     code: "KGS",
@@ -728,6 +803,7 @@ pub const KGS: Currency<'static> = Currency {
     number: 417,
     minor_units: Some(2),
 };
+pub const KGS_REF: &'static Currency<'static> = &KGS;
 
 pub const KHR: Currency<'static> = Currency {
     code: "KHR",
@@ -737,6 +813,7 @@ pub const KHR: Currency<'static> = Currency {
     number: 116,
     minor_units: Some(2),
 };
+pub const KHR_REF: &'static Currency<'static> = &KHR;
 
 pub const KMF: Currency<'static> = Currency {
     code: "KMF",
@@ -746,6 +823,7 @@ pub const KMF: Currency<'static> = Currency {
     number: 174,
     minor_units: Some(0),
 };
+pub const KMF_REF: &'static Currency<'static> = &KMF;
 
 pub const KPW: Currency<'static> = Currency {
     code: "KPW",
@@ -755,6 +833,7 @@ pub const KPW: Currency<'static> = Currency {
     number: 408,
     minor_units: Some(2),
 };
+pub const KPW_REF: &'static Currency<'static> = &KPW;
 
 pub const KRW: Currency<'static> = Currency {
     code: "KRW",
@@ -764,6 +843,7 @@ pub const KRW: Currency<'static> = Currency {
     number: 410,
     minor_units: Some(0),
 };
+pub const KRW_REF: &'static Currency<'static> = &KRW;
 
 pub const KWD: Currency<'static> = Currency {
     code: "KWD",
@@ -773,6 +853,7 @@ pub const KWD: Currency<'static> = Currency {
     number: 414,
     minor_units: Some(3),
 };
+pub const KWD_REF: &'static Currency<'static> = &KWD;
 
 pub const KYD: Currency<'static> = Currency {
     code: "KYD",
@@ -782,6 +863,7 @@ pub const KYD: Currency<'static> = Currency {
     number: 136,
     minor_units: Some(2),
 };
+pub const KYD_REF: &'static Currency<'static> = &KYD;
 
 pub const KZT: Currency<'static> = Currency {
     code: "KZT",
@@ -791,6 +873,7 @@ pub const KZT: Currency<'static> = Currency {
     number: 398,
     minor_units: Some(2),
 };
+pub const KZT_REF: &'static Currency<'static> = &KZT;
 
 pub const LAK: Currency<'static> = Currency {
     code: "LAK",
@@ -800,6 +883,7 @@ pub const LAK: Currency<'static> = Currency {
     number: 418,
     minor_units: Some(2),
 };
+pub const LAK_REF: &'static Currency<'static> = &LAK;
 
 pub const LBP: Currency<'static> = Currency {
     code: "LBP",
@@ -809,6 +893,7 @@ pub const LBP: Currency<'static> = Currency {
     number: 422,
     minor_units: Some(2),
 };
+pub const LBP_REF: &'static Currency<'static> = &LBP;
 
 pub const LKR: Currency<'static> = Currency {
     code: "LKR",
@@ -818,6 +903,7 @@ pub const LKR: Currency<'static> = Currency {
     number: 144,
     minor_units: Some(2),
 };
+pub const LKR_REF: &'static Currency<'static> = &LKR;
 
 pub const LRD: Currency<'static> = Currency {
     code: "LRD",
@@ -827,6 +913,7 @@ pub const LRD: Currency<'static> = Currency {
     number: 430,
     minor_units: Some(2),
 };
+pub const LRD_REF: &'static Currency<'static> = &LRD;
 
 pub const LSL: Currency<'static> = Currency {
     code: "LSL",
@@ -836,6 +923,7 @@ pub const LSL: Currency<'static> = Currency {
     number: 426,
     minor_units: Some(2),
 };
+pub const LSL_REF: &'static Currency<'static> = &LSL;
 
 pub const LYD: Currency<'static> = Currency {
     code: "LYD",
@@ -845,6 +933,7 @@ pub const LYD: Currency<'static> = Currency {
     number: 434,
     minor_units: Some(3),
 };
+pub const LYD_REF: &'static Currency<'static> = &LYD;
 
 pub const MAD: Currency<'static> = Currency {
     code: "MAD",
@@ -854,6 +943,7 @@ pub const MAD: Currency<'static> = Currency {
     number: 504,
     minor_units: Some(2),
 };
+pub const MAD_REF: &'static Currency<'static> = &MAD;
 
 pub const MDL: Currency<'static> = Currency {
     code: "MDL",
@@ -863,6 +953,7 @@ pub const MDL: Currency<'static> = Currency {
     number: 498,
     minor_units: Some(2),
 };
+pub const MDL_REF: &'static Currency<'static> = &MDL;
 
 pub const MGA: Currency<'static> = Currency {
     code: "MGA",
@@ -872,6 +963,7 @@ pub const MGA: Currency<'static> = Currency {
     number: 969,
     minor_units: Some(2),
 };
+pub const MGA_REF: &'static Currency<'static> = &MGA;
 
 pub const MKD: Currency<'static> = Currency {
     code: "MKD",
@@ -881,6 +973,7 @@ pub const MKD: Currency<'static> = Currency {
     number: 807,
     minor_units: Some(2),
 };
+pub const MKD_REF: &'static Currency<'static> = &MKD;
 
 pub const MMK: Currency<'static> = Currency {
     code: "MMK",
@@ -890,6 +983,7 @@ pub const MMK: Currency<'static> = Currency {
     number: 104,
     minor_units: Some(2),
 };
+pub const MMK_REF: &'static Currency<'static> = &MMK;
 
 pub const MNT: Currency<'static> = Currency {
     code: "MNT",
@@ -899,6 +993,7 @@ pub const MNT: Currency<'static> = Currency {
     number: 496,
     minor_units: Some(2),
 };
+pub const MNT_REF: &'static Currency<'static> = &MNT;
 
 pub const MOP: Currency<'static> = Currency {
     code: "MOP",
@@ -908,6 +1003,7 @@ pub const MOP: Currency<'static> = Currency {
     number: 446,
     minor_units: Some(2),
 };
+pub const MOP_REF: &'static Currency<'static> = &MOP;
 
 pub const MRO: Currency<'static> = Currency {
     code: "MRO",
@@ -917,6 +1013,7 @@ pub const MRO: Currency<'static> = Currency {
     number: 478,
     minor_units: Some(2),
 };
+pub const MRO_REF: &'static Currency<'static> = &MRO;
 
 pub const MUR: Currency<'static> = Currency {
     code: "MUR",
@@ -926,6 +1023,7 @@ pub const MUR: Currency<'static> = Currency {
     number: 480,
     minor_units: Some(2),
 };
+pub const MUR_REF: &'static Currency<'static> = &MUR;
 
 pub const MVR: Currency<'static> = Currency {
     code: "MVR",
@@ -935,6 +1033,7 @@ pub const MVR: Currency<'static> = Currency {
     number: 462,
     minor_units: Some(2),
 };
+pub const MVR_REF: &'static Currency<'static> = &MVR;
 
 pub const MWK: Currency<'static> = Currency {
     code: "MWK",
@@ -944,6 +1043,7 @@ pub const MWK: Currency<'static> = Currency {
     number: 454,
     minor_units: Some(2),
 };
+pub const MWK_REF: &'static Currency<'static> = &MWK;
 
 pub const MXN: Currency<'static> = Currency {
     code: "MXN",
@@ -953,6 +1053,7 @@ pub const MXN: Currency<'static> = Currency {
     number: 484,
     minor_units: Some(2),
 };
+pub const MXN_REF: &'static Currency<'static> = &MXN;
 
 pub const MXV: Currency<'static> = Currency {
     code: "MXV",
@@ -962,6 +1063,7 @@ pub const MXV: Currency<'static> = Currency {
     number: 979,
     minor_units: Some(2),
 };
+pub const MXV_REF: &'static Currency<'static> = &MXV;
 
 pub const MYR: Currency<'static> = Currency {
     code: "MYR",
@@ -971,6 +1073,7 @@ pub const MYR: Currency<'static> = Currency {
     number: 458,
     minor_units: Some(2),
 };
+pub const MYR_REF: &'static Currency<'static> = &MYR;
 
 pub const MZN: Currency<'static> = Currency {
     code: "MZN",
@@ -980,6 +1083,7 @@ pub const MZN: Currency<'static> = Currency {
     number: 943,
     minor_units: Some(2),
 };
+pub const MZN_REF: &'static Currency<'static> = &MZN;
 
 pub const NAD: Currency<'static> = Currency {
     code: "NAD",
@@ -989,6 +1093,7 @@ pub const NAD: Currency<'static> = Currency {
     number: 516,
     minor_units: Some(2),
 };
+pub const NAD_REF: &'static Currency<'static> = &NAD;
 
 pub const NGN: Currency<'static> = Currency {
     code: "NGN",
@@ -998,6 +1103,7 @@ pub const NGN: Currency<'static> = Currency {
     number: 566,
     minor_units: Some(2),
 };
+pub const NGN_REF: &'static Currency<'static> = &NGN;
 
 pub const NIO: Currency<'static> = Currency {
     code: "NIO",
@@ -1007,6 +1113,7 @@ pub const NIO: Currency<'static> = Currency {
     number: 558,
     minor_units: Some(2),
 };
+pub const NIO_REF: &'static Currency<'static> = &NIO;
 
 pub const NOK: Currency<'static> = Currency {
     code: "NOK",
@@ -1016,6 +1123,7 @@ pub const NOK: Currency<'static> = Currency {
     number: 578,
     minor_units: Some(2),
 };
+pub const NOK_REF: &'static Currency<'static> = &NOK;
 
 pub const NPR: Currency<'static> = Currency {
     code: "NPR",
@@ -1025,6 +1133,7 @@ pub const NPR: Currency<'static> = Currency {
     number: 524,
     minor_units: Some(2),
 };
+pub const NPR_REF: &'static Currency<'static> = &NPR;
 
 pub const NZD: Currency<'static> = Currency {
     code: "NZD",
@@ -1034,6 +1143,7 @@ pub const NZD: Currency<'static> = Currency {
     number: 554,
     minor_units: Some(2),
 };
+pub const NZD_REF: &'static Currency<'static> = &NZD;
 
 pub const OMR: Currency<'static> = Currency {
     code: "OMR",
@@ -1043,6 +1153,7 @@ pub const OMR: Currency<'static> = Currency {
     number: 512,
     minor_units: Some(3),
 };
+pub const OMR_REF: &'static Currency<'static> = &OMR;
 
 pub const PAB: Currency<'static> = Currency {
     code: "PAB",
@@ -1052,6 +1163,7 @@ pub const PAB: Currency<'static> = Currency {
     number: 590,
     minor_units: Some(2),
 };
+pub const PAB_REF: &'static Currency<'static> = &PAB;
 
 pub const PEN: Currency<'static> = Currency {
     code: "PEN",
@@ -1061,6 +1173,7 @@ pub const PEN: Currency<'static> = Currency {
     number: 604,
     minor_units: Some(2),
 };
+pub const PEN_REF: &'static Currency<'static> = &PEN;
 
 pub const PGK: Currency<'static> = Currency {
     code: "PGK",
@@ -1070,6 +1183,7 @@ pub const PGK: Currency<'static> = Currency {
     number: 598,
     minor_units: Some(2),
 };
+pub const PGK_REF: &'static Currency<'static> = &PGK;
 
 pub const PHP: Currency<'static> = Currency {
     code: "PHP",
@@ -1079,6 +1193,7 @@ pub const PHP: Currency<'static> = Currency {
     number: 608,
     minor_units: Some(2),
 };
+pub const PHP_REF: &'static Currency<'static> = &PHP;
 
 pub const PKR: Currency<'static> = Currency {
     code: "PKR",
@@ -1088,6 +1203,7 @@ pub const PKR: Currency<'static> = Currency {
     number: 586,
     minor_units: Some(2),
 };
+pub const PKR_REF: &'static Currency<'static> = &PKR;
 
 pub const PLN: Currency<'static> = Currency {
     code: "PLN",
@@ -1097,6 +1213,7 @@ pub const PLN: Currency<'static> = Currency {
     number: 985,
     minor_units: Some(2),
 };
+pub const PLN_REF: &'static Currency<'static> = &PLN;
 
 pub const PYG: Currency<'static> = Currency {
     code: "PYG",
@@ -1106,6 +1223,7 @@ pub const PYG: Currency<'static> = Currency {
     number: 600,
     minor_units: Some(0),
 };
+pub const PYG_REF: &'static Currency<'static> = &PYG;
 
 pub const QAR: Currency<'static> = Currency {
     code: "QAR",
@@ -1115,6 +1233,7 @@ pub const QAR: Currency<'static> = Currency {
     number: 634,
     minor_units: Some(2),
 };
+pub const QAR_REF: &'static Currency<'static> = &QAR;
 
 pub const RON: Currency<'static> = Currency {
     code: "RON",
@@ -1124,6 +1243,7 @@ pub const RON: Currency<'static> = Currency {
     number: 946,
     minor_units: Some(2),
 };
+pub const RON_REF: &'static Currency<'static> = &RON;
 
 pub const RSD: Currency<'static> = Currency {
     code: "RSD",
@@ -1133,6 +1253,7 @@ pub const RSD: Currency<'static> = Currency {
     number: 941,
     minor_units: Some(2),
 };
+pub const RSD_REF: &'static Currency<'static> = &RSD;
 
 pub const RUB: Currency<'static> = Currency {
     code: "RUB",
@@ -1142,6 +1263,7 @@ pub const RUB: Currency<'static> = Currency {
     number: 643,
     minor_units: Some(2),
 };
+pub const RUB_REF: &'static Currency<'static> = &RUB;
 
 pub const RWF: Currency<'static> = Currency {
     code: "RWF",
@@ -1151,6 +1273,7 @@ pub const RWF: Currency<'static> = Currency {
     number: 646,
     minor_units: Some(0),
 };
+pub const RWF_REF: &'static Currency<'static> = &RWF;
 
 pub const SAR: Currency<'static> = Currency {
     code: "SAR",
@@ -1160,6 +1283,7 @@ pub const SAR: Currency<'static> = Currency {
     number: 682,
     minor_units: Some(2),
 };
+pub const SAR_REF: &'static Currency<'static> = &SAR;
 
 pub const SBD: Currency<'static> = Currency {
     code: "SBD",
@@ -1169,6 +1293,7 @@ pub const SBD: Currency<'static> = Currency {
     number: 90,
     minor_units: Some(2),
 };
+pub const SBD_REF: &'static Currency<'static> = &SBD;
 
 pub const SCR: Currency<'static> = Currency {
     code: "SCR",
@@ -1178,6 +1303,7 @@ pub const SCR: Currency<'static> = Currency {
     number: 690,
     minor_units: Some(2),
 };
+pub const SCR_REF: &'static Currency<'static> = &SCR;
 
 pub const SDG: Currency<'static> = Currency {
     code: "SDG",
@@ -1187,6 +1313,7 @@ pub const SDG: Currency<'static> = Currency {
     number: 938,
     minor_units: Some(2),
 };
+pub const SDG_REF: &'static Currency<'static> = &SDG;
 
 pub const SEK: Currency<'static> = Currency {
     code: "SEK",
@@ -1196,6 +1323,7 @@ pub const SEK: Currency<'static> = Currency {
     number: 752,
     minor_units: Some(2),
 };
+pub const SEK_REF: &'static Currency<'static> = &SEK;
 
 pub const SGD: Currency<'static> = Currency {
     code: "SGD",
@@ -1205,6 +1333,7 @@ pub const SGD: Currency<'static> = Currency {
     number: 702,
     minor_units: Some(2),
 };
+pub const SGD_REF: &'static Currency<'static> = &SGD;
 
 pub const SHP: Currency<'static> = Currency {
     code: "SHP",
@@ -1214,6 +1343,7 @@ pub const SHP: Currency<'static> = Currency {
     number: 654,
     minor_units: Some(2),
 };
+pub const SHP_REF: &'static Currency<'static> = &SHP;
 
 pub const SLL: Currency<'static> = Currency {
     code: "SLL",
@@ -1223,6 +1353,7 @@ pub const SLL: Currency<'static> = Currency {
     number: 694,
     minor_units: Some(2),
 };
+pub const SLL_REF: &'static Currency<'static> = &SLL;
 
 pub const SOS: Currency<'static> = Currency {
     code: "SOS",
@@ -1232,6 +1363,7 @@ pub const SOS: Currency<'static> = Currency {
     number: 706,
     minor_units: Some(2),
 };
+pub const SOS_REF: &'static Currency<'static> = &SOS;
 
 pub const SRD: Currency<'static> = Currency {
     code: "SRD",
@@ -1241,6 +1373,7 @@ pub const SRD: Currency<'static> = Currency {
     number: 968,
     minor_units: Some(2),
 };
+pub const SRD_REF: &'static Currency<'static> = &SRD;
 
 pub const SSP: Currency<'static> = Currency {
     code: "SSP",
@@ -1250,6 +1383,7 @@ pub const SSP: Currency<'static> = Currency {
     number: 728,
     minor_units: Some(2),
 };
+pub const SSP_REF: &'static Currency<'static> = &SSP;
 
 pub const STD: Currency<'static> = Currency {
     code: "STD",
@@ -1259,6 +1393,7 @@ pub const STD: Currency<'static> = Currency {
     number: 678,
     minor_units: Some(2),
 };
+pub const STD_REF: &'static Currency<'static> = &STD;
 
 pub const SVC: Currency<'static> = Currency {
     code: "SVC",
@@ -1268,6 +1403,7 @@ pub const SVC: Currency<'static> = Currency {
     number: 222,
     minor_units: Some(2),
 };
+pub const SVC_REF: &'static Currency<'static> = &SVC;
 
 pub const SYP: Currency<'static> = Currency {
     code: "SYP",
@@ -1277,6 +1413,7 @@ pub const SYP: Currency<'static> = Currency {
     number: 760,
     minor_units: Some(2),
 };
+pub const SYP_REF: &'static Currency<'static> = &SYP;
 
 pub const SZL: Currency<'static> = Currency {
     code: "SZL",
@@ -1286,6 +1423,7 @@ pub const SZL: Currency<'static> = Currency {
     number: 748,
     minor_units: Some(2),
 };
+pub const SZL_REF: &'static Currency<'static> = &SZL;
 
 pub const THB: Currency<'static> = Currency {
     code: "THB",
@@ -1295,6 +1433,7 @@ pub const THB: Currency<'static> = Currency {
     number: 764,
     minor_units: Some(2),
 };
+pub const THB_REF: &'static Currency<'static> = &THB;
 
 pub const TJS: Currency<'static> = Currency {
     code: "TJS",
@@ -1304,6 +1443,7 @@ pub const TJS: Currency<'static> = Currency {
     number: 972,
     minor_units: Some(2),
 };
+pub const TJS_REF: &'static Currency<'static> = &TJS;
 
 pub const TMT: Currency<'static> = Currency {
     code: "TMT",
@@ -1313,6 +1453,7 @@ pub const TMT: Currency<'static> = Currency {
     number: 934,
     minor_units: Some(2),
 };
+pub const TMT_REF: &'static Currency<'static> = &TMT;
 
 pub const TND: Currency<'static> = Currency {
     code: "TND",
@@ -1322,6 +1463,7 @@ pub const TND: Currency<'static> = Currency {
     number: 788,
     minor_units: Some(3),
 };
+pub const TND_REF: &'static Currency<'static> = &TND;
 
 pub const TOP: Currency<'static> = Currency {
     code: "TOP",
@@ -1331,6 +1473,7 @@ pub const TOP: Currency<'static> = Currency {
     number: 776,
     minor_units: Some(2),
 };
+pub const TOP_REF: &'static Currency<'static> = &TOP;
 
 pub const TRY: Currency<'static> = Currency {
     code: "TRY",
@@ -1340,6 +1483,7 @@ pub const TRY: Currency<'static> = Currency {
     number: 949,
     minor_units: Some(2),
 };
+pub const TRY_REF: &'static Currency<'static> = &TRY;
 
 pub const TTD: Currency<'static> = Currency {
     code: "TTD",
@@ -1349,6 +1493,7 @@ pub const TTD: Currency<'static> = Currency {
     number: 780,
     minor_units: Some(2),
 };
+pub const TTD_REF: &'static Currency<'static> = &TTD;
 
 pub const TWD: Currency<'static> = Currency {
     code: "TWD",
@@ -1358,6 +1503,7 @@ pub const TWD: Currency<'static> = Currency {
     number: 901,
     minor_units: Some(2),
 };
+pub const TWD_REF: &'static Currency<'static> = &TWD;
 
 pub const TZS: Currency<'static> = Currency {
     code: "TZS",
@@ -1367,6 +1513,7 @@ pub const TZS: Currency<'static> = Currency {
     number: 834,
     minor_units: Some(2),
 };
+pub const TZS_REF: &'static Currency<'static> = &TZS;
 
 pub const UAH: Currency<'static> = Currency {
     code: "UAH",
@@ -1376,6 +1523,7 @@ pub const UAH: Currency<'static> = Currency {
     number: 980,
     minor_units: Some(2),
 };
+pub const UAH_REF: &'static Currency<'static> = &UAH;
 
 pub const UGX: Currency<'static> = Currency {
     code: "UGX",
@@ -1385,6 +1533,7 @@ pub const UGX: Currency<'static> = Currency {
     number: 800,
     minor_units: Some(0),
 };
+pub const UGX_REF: &'static Currency<'static> = &UGX;
 
 pub const USD: Currency<'static> = Currency {
     code: "USD",
@@ -1413,6 +1562,7 @@ pub const USD: Currency<'static> = Currency {
     number: 840,
     minor_units: Some(2),
 };
+pub const USD_REF: &'static Currency<'static> = &USD;
 
 pub const USN: Currency<'static> = Currency {
     code: "USN",
@@ -1422,6 +1572,7 @@ pub const USN: Currency<'static> = Currency {
     number: 997,
     minor_units: Some(2),
 };
+pub const USN_REF: &'static Currency<'static> = &USN;
 
 pub const UYI: Currency<'static> = Currency {
     code: "UYI",
@@ -1431,6 +1582,7 @@ pub const UYI: Currency<'static> = Currency {
     number: 940,
     minor_units: Some(0),
 };
+pub const UYI_REF: &'static Currency<'static> = &UYI;
 
 pub const UYU: Currency<'static> = Currency {
     code: "UYU",
@@ -1440,6 +1592,7 @@ pub const UYU: Currency<'static> = Currency {
     number: 858,
     minor_units: Some(2),
 };
+pub const UYU_REF: &'static Currency<'static> = &UYU;
 
 pub const UZS: Currency<'static> = Currency {
     code: "UZS",
@@ -1449,6 +1602,7 @@ pub const UZS: Currency<'static> = Currency {
     number: 860,
     minor_units: Some(2),
 };
+pub const UZS_REF: &'static Currency<'static> = &UZS;
 
 pub const VEF: Currency<'static> = Currency {
     code: "VEF",
@@ -1458,6 +1612,7 @@ pub const VEF: Currency<'static> = Currency {
     number: 937,
     minor_units: Some(2),
 };
+pub const VEF_REF: &'static Currency<'static> = &VEF;
 
 pub const VND: Currency<'static> = Currency {
     code: "VND",
@@ -1467,6 +1622,7 @@ pub const VND: Currency<'static> = Currency {
     number: 704,
     minor_units: Some(0),
 };
+pub const VND_REF: &'static Currency<'static> = &VND;
 
 pub const VUV: Currency<'static> = Currency {
     code: "VUV",
@@ -1476,6 +1632,7 @@ pub const VUV: Currency<'static> = Currency {
     number: 548,
     minor_units: Some(0),
 };
+pub const VUV_REF: &'static Currency<'static> = &VUV;
 
 pub const WST: Currency<'static> = Currency {
     code: "WST",
@@ -1485,6 +1642,7 @@ pub const WST: Currency<'static> = Currency {
     number: 882,
     minor_units: Some(2),
 };
+pub const WST_REF: &'static Currency<'static> = &WST;
 
 pub const XAF: Currency<'static> = Currency {
     code: "XAF",
@@ -1499,6 +1657,7 @@ pub const XAF: Currency<'static> = Currency {
     number: 950,
     minor_units: Some(0),
 };
+pub const XAF_REF: &'static Currency<'static> = &XAF;
 
 pub const XAG: Currency<'static> = Currency {
     code: "XAG",
@@ -1508,6 +1667,7 @@ pub const XAG: Currency<'static> = Currency {
     number: 961,
     minor_units: None,
 };
+pub const XAG_REF: &'static Currency<'static> = &XAG;
 
 pub const XAU: Currency<'static> = Currency {
     code: "XAU",
@@ -1517,6 +1677,7 @@ pub const XAU: Currency<'static> = Currency {
     number: 959,
     minor_units: None,
 };
+pub const XAU_REF: &'static Currency<'static> = &XAU;
 
 pub const XBA: Currency<'static> = Currency {
     code: "XBA",
@@ -1526,6 +1687,7 @@ pub const XBA: Currency<'static> = Currency {
     number: 955,
     minor_units: None,
 };
+pub const XBA_REF: &'static Currency<'static> = &XBA;
 
 pub const XBB: Currency<'static> = Currency {
     code: "XBB",
@@ -1535,6 +1697,7 @@ pub const XBB: Currency<'static> = Currency {
     number: 956,
     minor_units: None,
 };
+pub const XBB_REF: &'static Currency<'static> = &XBB;
 
 pub const XBC: Currency<'static> = Currency {
     code: "XBC",
@@ -1544,6 +1707,7 @@ pub const XBC: Currency<'static> = Currency {
     number: 957,
     minor_units: None,
 };
+pub const XBC_REF: &'static Currency<'static> = &XBC;
 
 pub const XBD: Currency<'static> = Currency {
     code: "XBD",
@@ -1553,6 +1717,7 @@ pub const XBD: Currency<'static> = Currency {
     number: 958,
     minor_units: None,
 };
+pub const XBD_REF: &'static Currency<'static> = &XBD;
 
 pub const XCD: Currency<'static> = Currency {
     code: "XCD",
@@ -1570,6 +1735,7 @@ pub const XCD: Currency<'static> = Currency {
     number: 951,
     minor_units: Some(2),
 };
+pub const XCD_REF: &'static Currency<'static> = &XCD;
 
 pub const XDR: Currency<'static> = Currency {
     code: "XDR",
@@ -1579,6 +1745,7 @@ pub const XDR: Currency<'static> = Currency {
     number: 960,
     minor_units: None,
 };
+pub const XDR_REF: &'static Currency<'static> = &XDR;
 
 pub const XOF: Currency<'static> = Currency {
     code: "XOF",
@@ -1595,6 +1762,7 @@ pub const XOF: Currency<'static> = Currency {
     number: 952,
     minor_units: Some(0),
 };
+pub const XOF_REF: &'static Currency<'static> = &XOF;
 
 pub const XPD: Currency<'static> = Currency {
     code: "XPD",
@@ -1604,6 +1772,7 @@ pub const XPD: Currency<'static> = Currency {
     number: 964,
     minor_units: None,
 };
+pub const XPD_REF: &'static Currency<'static> = &XPD;
 
 pub const XPF: Currency<'static> = Currency {
     code: "XPF",
@@ -1613,6 +1782,7 @@ pub const XPF: Currency<'static> = Currency {
     number: 953,
     minor_units: Some(0),
 };
+pub const XPF_REF: &'static Currency<'static> = &XPF;
 
 pub const XPT: Currency<'static> = Currency {
     code: "XPT",
@@ -1622,6 +1792,7 @@ pub const XPT: Currency<'static> = Currency {
     number: 962,
     minor_units: None,
 };
+pub const XPT_REF: &'static Currency<'static> = &XPT;
 
 pub const XSU: Currency<'static> = Currency {
     code: "XSU",
@@ -1631,6 +1802,7 @@ pub const XSU: Currency<'static> = Currency {
     number: 994,
     minor_units: None,
 };
+pub const XSU_REF: &'static Currency<'static> = &XSU;
 
 pub const XTS: Currency<'static> = Currency {
     code: "XTS",
@@ -1640,6 +1812,7 @@ pub const XTS: Currency<'static> = Currency {
     number: 963,
     minor_units: None,
 };
+pub const XTS_REF: &'static Currency<'static> = &XTS;
 
 pub const XUA: Currency<'static> = Currency {
     code: "XUA",
@@ -1649,6 +1822,7 @@ pub const XUA: Currency<'static> = Currency {
     number: 965,
     minor_units: None,
 };
+pub const XUA_REF: &'static Currency<'static> = &XUA;
 
 pub const XXX: Currency<'static> = Currency {
     code: "XXX",
@@ -1658,6 +1832,7 @@ pub const XXX: Currency<'static> = Currency {
     number: 999,
     minor_units: None,
 };
+pub const XXX_REF: &'static Currency<'static> = &XXX;
 
 pub const YER: Currency<'static> = Currency {
     code: "YER",
@@ -1667,6 +1842,7 @@ pub const YER: Currency<'static> = Currency {
     number: 886,
     minor_units: Some(2),
 };
+pub const YER_REF: &'static Currency<'static> = &YER;
 
 pub const ZAR: Currency<'static> = Currency {
     code: "ZAR",
@@ -1679,6 +1855,7 @@ pub const ZAR: Currency<'static> = Currency {
     number: 710,
     minor_units: Some(2),
 };
+pub const ZAR_REF: &'static Currency<'static> = &ZAR;
 
 pub const ZMW: Currency<'static> = Currency {
     code: "ZMW",
@@ -1688,6 +1865,7 @@ pub const ZMW: Currency<'static> = Currency {
     number: 967,
     minor_units: Some(2),
 };
+pub const ZMW_REF: &'static Currency<'static> = &ZMW;
 
 pub const ZWL: Currency<'static> = Currency {
     code: "ZWL",
@@ -1697,3 +1875,4 @@ pub const ZWL: Currency<'static> = Currency {
     number: 932,
     minor_units: Some(2),
 };
+pub const ZWL_REF: &'static Currency<'static> = &ZWL;

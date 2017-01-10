@@ -126,7 +126,8 @@ fn main() {
                          "    fund: {fund},\n",
                          "    number: {number},\n",
                          "    minor_units: {minor_units:?},\n",
-                         "}};\n"),
+                         "}};\n",
+			 "pub const {code}_REF: &'static Currency<'static> = &{code};\n"),
                  code = code,
                  name = currency.name,
                  countries = &(currency.countries)
