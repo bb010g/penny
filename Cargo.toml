@@ -1,11 +1,24 @@
 [package]
 authors = ["Brayden Banks <bb010g@gmail.com>"]
-name = "penny"
-version = "0.1.1"
+build = "build.rs"
+description = "ISO 4217–compliant currency library"
 license = "MIT"
+name = "penny"
 readme = "README.md"
 repository = "https://github.com/bb010g/penny"
-description = "ISO 4217–compliant currency library"
+version = "0.2.0"
+
+[build-dependencies]
+phf_codegen = "0.7.21"
+quick-xml = "0.7.0"
 
 [dependencies]
-phf = "0.7.20"
+phf = "0.7.21"
+
+[dependencies.clippy]
+optional = true
+version = "*"
+
+[features]
+default = []
+lint = ["clippy"]

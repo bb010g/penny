@@ -1,8 +1,11 @@
+#![cfg_attr(feature="lint", feature(plugin))]
+#![cfg_attr(feature="lint", plugin(clippy))]
+
 extern crate phf;
 
 pub mod currencies;
-mod phf_gen;
-pub use phf_gen::CURRENCIES;
+
+include!(concat!(env!("OUT_DIR"), "/phf_gen.rs"));
 
 #[derive(Debug)]
 pub struct Currency<'a> {
@@ -13,6 +16,7 @@ pub struct Currency<'a> {
     number: u16,
     minor_units: Option<u8>,
 }
+
 impl<'a> Currency<'a> {
     pub fn code(&self) -> &'a str {
         self.code
@@ -35,6 +39,22 @@ impl<'a> Currency<'a> {
 }
 
 pub struct Money<'a> {
-    pub amount: u64,
-    pub currency: Currency<'a>,
+    amount: i64,
+    currency: &'a Currency<'a>,
+}
+
+impl<'a> Money<'a> {
+    pub fn new(amount: i64, currency: &'a Currency<'a>) -> Money<'a> {
+        Money {
+            amount: amount,
+            currency: currency,
+        }
+    }
+
+    pub fn amount(&self) -> i64 {
+        self.amount
+    }
+    pub fn currency(&self) -> &Currency {
+        self.currency
+    }
 }
