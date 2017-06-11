@@ -4,7 +4,6 @@ extern crate quick_xml;
 use std::collections::BTreeMap;
 use std::env;
 use std::io::{BufRead, Write};
-use std::ops::Deref;
 use std::str;
 
 use quick_xml::events::Event;
@@ -30,37 +29,57 @@ enum Tag {
 
 fn main() {
     let mut reader = Reader::from_file("src/list_one.xml").expect("list_one.xml missing");
+    println!("cargo:rerun-if-changed=src/list_one.xml");
     reader.trim_text(true);
 
-    let mut currencies: BTreeMap<String, Currency> = BTreeMap::new();
+    let mut xml_currencies: BTreeMap<String, Currency> = BTreeMap::new();
 
     for currency in Currencies::new(&mut reader) {
-        currencies.entry(currency.code.clone()).or_insert(currency);
+        xml_currencies
+            .entry(currency.code.clone())
+            .or_insert(currency);
     }
 
     let out_dir = env::var("OUT_DIR").unwrap();
-    let src_path = std::path::Path::new(&out_dir).join("currencies.rs");
-    let mut src = std::fs::File::create(&src_path).expect("Can't create currencies.rs");
 
-    let phf_src_path = std::path::Path::new(&out_dir).join("phf_gen.rs");
-    let mut phf_src = std::fs::File::create(&phf_src_path).unwrap();
-    write!(&mut phf_src,
+    let currencies_path = std::path::Path::new(&out_dir).join("currencies.rs");
+    let mut currencies = std::fs::File::create(&currencies_path)
+        .expect("Can't create currencies.rs");
+
+    let phf_cur_code_path = std::path::Path::new(&out_dir).join("phf_cur_code.rs");
+    let mut phf_cur_code = std::fs::File::create(&phf_cur_code_path)
+        .expect("Can't create phf_cur_code.rs");
+
+    let phf_currencies_path = std::path::Path::new(&out_dir).join("phf_currencies.rs");
+    let mut phf_currencies = std::fs::File::create(&phf_currencies_path).unwrap();
+
+    writeln!(&mut currencies, "currency! {{ CurrencyCode;\n").unwrap();
+
+    write!(&mut phf_cur_code,
+           "pub static CURRENCY_CODE: phf::Map<&'static str, CurrencyCode> = ")
+            .unwrap();
+    let mut cur_code_map = phf_codegen::Map::new();
+    cur_code_map.phf_path("phf");
+
+    write!(&mut phf_currencies,
            "pub static CURRENCIES: phf::Map<&'static str, Currency<'static>> = ")
             .unwrap();
-    let mut map = phf_codegen::Map::new();
-    map.phf_path("phf");
+    let mut currencies_map = phf_codegen::Map::new();
+    currencies_map.phf_path("phf");
 
-    for (code, currency) in currencies {
-        writeln!(&mut src,
-                 concat!("pub const {code}: Currency<'static> = Currency {{\n",
+    for (code, currency) in xml_currencies {
+        let cur_code_str = String::from("CurrencyCode::") + &code;
+
+        cur_code_map.entry(code.clone(), &cur_code_str);
+        writeln!(&mut currencies,
+                 concat!("{code}({code}_REF) {{\n",
                          "    code: {code:?},\n",
                          "    name: {name:?},\n",
                          "    countries: &[{countries}],\n",
                          "    fund: {fund},\n",
                          "    number: {number},\n",
                          "    minor_units: {minor_units:?},\n",
-                         "}};\n",
-                         "pub static {code}_REF: &'static Currency<'static> = &{code};\n"),
+                         "}},\n"),
                  code = code,
                  name = currency.name,
                  countries = &(currency.countries)
@@ -72,11 +91,14 @@ fn main() {
                  number = currency.number,
                  minor_units = currency.minor_units)
                 .unwrap();
-        map.entry(code.clone(), (String::from("currencies::") + &code).deref());
+        currencies_map.entry(code.clone(), &code);
     }
 
-    map.build(&mut phf_src).unwrap();
-    writeln!(&mut phf_src, ";").unwrap();
+    writeln!(&mut currencies, "}}").unwrap();
+    cur_code_map.build(&mut phf_cur_code).unwrap();
+    writeln!(&mut phf_cur_code, ";").unwrap();
+    currencies_map.build(&mut phf_currencies).unwrap();
+    writeln!(&mut phf_currencies, ";").unwrap();
 }
 
 struct Currencies<'a, B>

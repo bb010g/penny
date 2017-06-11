@@ -1,13 +1,21 @@
 #![cfg_attr(feature="lint", feature(plugin))]
 #![cfg_attr(feature="lint", plugin(clippy))]
+#![warn(missing_docs)]
 
 extern crate phf;
+#[cfg(featuer="serde")]
+extern crate serde;
+#[cfg(feature="serde")]
+#[macro_use]
+extern crate serde_derive;
 
+#[allow(missing_docs)]
 pub mod currencies;
+pub use currencies::CURRENCY_CODE;
+pub use currencies::CURRENCIES;
 
-include!(concat!(env!("OUT_DIR"), "/phf_gen.rs"));
-
-#[derive(Debug)]
+#[derive(Debug, Clone)]
+#[cfg_attr(feature="serde-serialize", derive(Serialize))]
 pub struct Currency<'a> {
     code: &'a str,
     name: &'a str,
@@ -38,6 +46,8 @@ impl<'a> Currency<'a> {
     }
 }
 
+#[derive(Debug, Clone)]
+#[cfg_attr(feature="serde-serialize", derive(Serialize))]
 pub struct Money<'a> {
     amount: i64,
     currency: &'a Currency<'a>,

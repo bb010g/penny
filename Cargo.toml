@@ -19,6 +19,15 @@ phf = "0.7.21"
 optional = true
 version = "*"
 
+[dependencies.serde]
+optional = true
+version = "1.0.8"
+
+[dependencies.serde_derive]
+optional = true
+version = "1.0.8"
+
 [features]
 default = []
 lint = ["clippy"]
+serde-serialize = ["serde", "serde_derive"]
