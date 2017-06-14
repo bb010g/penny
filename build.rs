@@ -49,17 +49,18 @@ fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
 
     let currencies_path = std::path::Path::new(&out_dir).join("currencies.rs");
-    let mut currencies = std::fs::File::create(&currencies_path)
-        .expect("Can't create currencies.rs");
+    let mut currencies =
+        std::fs::File::create(&currencies_path).expect("Can't create currencies.rs");
 
     let phf_cur_path = std::path::Path::new(&out_dir).join("phf_cur.rs");
     let mut phf_cur = std::fs::File::create(&phf_cur_path).expect("Can't create phf_cur.rs");
 
     writeln!(&mut currencies, "currency! {{ Currency;\n").unwrap();
 
-    write!(&mut phf_cur,
-           "static CURRENCY: phf::Map<&'static str, Currency> = ")
-            .unwrap();
+    write!(
+        &mut phf_cur,
+        "static CURRENCY: phf::Map<&'static str, Currency> = "
+    ).unwrap();
     let mut cur_map = phf_codegen::Map::new();
     cur_map.phf_path("phf");
 
@@ -67,27 +68,30 @@ fn main() {
         let cur_str = String::from("Currency::") + &code;
 
         cur_map.entry(code.clone(), &cur_str);
-        writeln!(&mut currencies,
-                 concat!("{code} {{\n",
-                         "    name: {name:?},\n",
-                         "    countries: &[{countries}],\n",
-                         "    _countries_str: {countries_str:?},\n",
-                         "    fund: {fund},\n",
-                         "    number: {number},\n",
-                         "    minor_units: {minor_units:?},\n",
-                         "}},\n"),
-                 code = code,
-                 name = currency.name,
-                 countries = &(currency.countries)
-                                  .iter()
-                                  .map(|s| format!("{:?}", s))
-                                  .collect::<Vec<_>>()
-                                  .join(", "),
-                 countries_str = countries_str(&*currency.countries) + ".",
-                 fund = currency.fund,
-                 number = currency.number,
-                 minor_units = currency.minor_units)
-                .unwrap();
+        writeln!(
+            &mut currencies,
+            concat!(
+                "{code} {{\n",
+                "    name: {name:?},\n",
+                "    countries: &[{countries}],\n",
+                "    _countries_str: {countries_str:?},\n",
+                "    fund: {fund},\n",
+                "    number: {number},\n",
+                "    minor_units: {minor_units:?},\n",
+                "}},\n"
+            ),
+            code = code,
+            name = currency.name,
+            countries = &(currency.countries)
+                .iter()
+                .map(|s| format!("{:?}", s))
+                .collect::<Vec<_>>()
+                .join(", "),
+            countries_str = countries_str(&*currency.countries) + ".",
+            fund = currency.fund,
+            number = currency.number,
+            minor_units = currency.minor_units
+        ).unwrap();
     }
 
     writeln!(&mut currencies, "}}").unwrap();
@@ -96,8 +100,9 @@ fn main() {
 }
 
 struct Currencies<'a, B>
-    where B: BufRead,
-          B: 'a
+where
+    B: BufRead,
+    B: 'a,
 {
     reader: &'a mut Reader<B>,
     buf: Vec<u8>,
@@ -133,10 +138,10 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
                             tag = Tag::CurrencyName;
                             fund = e.attributes()
                                 .find(|r| {
-                                          r.as_ref()
-                                              .map(|a| a.key == b"IsFund" && a.value == b"true")
-                                              .unwrap_or(false)
-                                      })
+                                    r.as_ref()
+                                        .map(|a| a.key == b"IsFund" && a.value == b"true")
+                                        .unwrap_or(false)
+                                })
                                 .is_some()
                         }
                         b"Ccy" => tag = Tag::Code,
@@ -159,13 +164,13 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
                         b"CcyNtry" => {
                             if code != "" {
                                 return Some(Currency {
-                                                code: code.clone(),
-                                                name: name.clone(),
-                                                countries: vec![country.to_owned()],
-                                                fund: fund,
-                                                number: num,
-                                                minor_units: units,
-                                            });
+                                    code: code.clone(),
+                                    name: name.clone(),
+                                    countries: vec![country.to_owned()],
+                                    fund: fund,
+                                    number: num,
+                                    minor_units: units,
+                                });
                             }
                         }
                         _ => (),
@@ -173,9 +178,11 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
                 }
                 Ok(Event::Eof) => return None,
                 Err(e) => {
-                    panic!("Error at position {}: {:?}",
-                           self.reader.buffer_position(),
-                           e)
+                    panic!(
+                        "Error at position {}: {:?}",
+                        self.reader.buffer_position(),
+                        e
+                    )
                 }
                 _ => (),
             }

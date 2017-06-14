@@ -13,9 +13,9 @@ list][list-one].
 
 extern crate mitochondria;
 extern crate phf;
-#[cfg(featuer="serde")]
+#[cfg(feature = "serde")]
 extern crate serde;
-#[cfg(feature="serde")]
+#[cfg(feature = "serde")]
 #[macro_use]
 extern crate serde_derive;
 
@@ -29,7 +29,7 @@ pub use currencies::Currency;
 ///
 /// [info]: enum.Currency.html#method.info
 #[derive(Debug, Clone)]
-#[cfg_attr(feature="serde-serialize", derive(Serialize))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize))]
 pub struct CurrencyInfo {
     code: &'static str,
     name: &'static str,
@@ -68,7 +68,7 @@ impl CurrencyInfo {
 
 /// A bundle of an amount of money and the currency it's in.
 #[derive(Debug, Clone)]
-#[cfg_attr(feature="serde-serialize", derive(Serialize, Deserialize))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 pub struct Money {
     amount: i64,
     currency: Currency,
