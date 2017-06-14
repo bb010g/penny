@@ -1,43 +1,66 @@
-use phf;
 use std::fmt;
+use std::str::FromStr;
 
-use Currency;
+use phf;
+
+use CurrencyInfo;
 
 macro_rules! currency {
-    ($currency_code:ident;
-     $($code:ident($code_ref:ident) {
-         code: $code_str:expr,
+    ($currency:ident;
+     $($code:ident {
          name: $name:expr,
          countries: $countries:expr,
+         _countries_str: $countries_str:expr,
          fund: $fund:expr,
          number: $number:expr,
          minor_units: $minor_units:expr,
      },)*) => {
+        /// The set of active currencies and funds codes.
         #[derive(Debug, Copy, Clone, PartialEq, Eq)]
         #[cfg_attr(feature="serde-serialize", derive(Serialize, Deserialize))]
-        pub enum $currency_code {
-            $($code,)*
+        pub enum $currency {
+            $(
+                /// The
+                #[doc=$name]
+                /// of
+                #[doc=$countries_str]
+                $code,
+            )*
         }
-        impl fmt::Display for $currency_code {
+        impl fmt::Display for $currency {
             fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
                 match *self {
-                    $(CurrencyCode::$code => write!(f, "{}", $code_str),)*
+                    $(Currency::$code => write!(f, "{}", stringify!($code)),)*
                 }
             }
         }
-        $(pub const $code: Currency<'static> = Currency {
-            code: $code_str,
+        impl FromStr for $currency {
+            type Err = ();
+
+            fn from_str(s: &str) -> Result<Self, Self::Err> {
+                CURRENCY.get(s).map(|c| *c).ok_or(())
+            }
+        }
+        impl $currency {
+            /// Returns information about the currency.
+            pub fn info(&self) -> &'static CurrencyInfo {
+                match *self {
+                    $($currency::$code => $code,)*
+                }
+            }
+        }
+
+        $(pub static $code: &CurrencyInfo = &CurrencyInfo {
+            code: stringify!($code),
             name: $name,
             countries: $countries,
             fund: $fund,
             number: $number,
             minor_units: $minor_units,
-        };
-        pub static $code_ref: &'static Currency<'static> = &$code;)*
-    }
+        };)*
+    };
 }
 
 include!(concat!(env!("OUT_DIR"), "/currencies.rs"));
 
-include!(concat!(env!("OUT_DIR"), "/phf_cur_code.rs"));
-include!(concat!(env!("OUT_DIR"), "/phf_currencies.rs"));
+include!(concat!(env!("OUT_DIR"), "/phf_cur.rs"));

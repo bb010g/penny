@@ -6,13 +6,14 @@ license = "MIT"
 name = "penny"
 readme = "README.md"
 repository = "https://github.com/bb010g/penny"
-version = "0.2.0"
+version = "0.1.0"
 
 [build-dependencies]
 phf_codegen = "0.7.21"
 quick-xml = "0.7.0"
 
 [dependencies]
+mitochondria = "1.1.2"
 phf = "0.7.21"
 
 [dependencies.clippy]
@@ -28,6 +29,6 @@ optional = true
 version = "1.0.8"
 
 [features]
-default = []
+default = ["serde-serialize"]
 lint = ["clippy"]
 serde-serialize = ["serde", "serde_derive"]

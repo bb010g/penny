@@ -1,7 +1,7 @@
 extern crate phf_codegen;
 extern crate quick_xml;
 
-use std::collections::BTreeMap;
+use std::collections::btree_map::{BTreeMap, Entry};
 use std::env;
 use std::io::{BufRead, Write};
 use std::str;
@@ -34,10 +34,16 @@ fn main() {
 
     let mut xml_currencies: BTreeMap<String, Currency> = BTreeMap::new();
 
-    for currency in Currencies::new(&mut reader) {
-        xml_currencies
-            .entry(currency.code.clone())
-            .or_insert(currency);
+    for mut currency in Currencies::new(&mut reader) {
+        let entry = xml_currencies.entry(currency.code.clone());
+        match entry {
+            Entry::Occupied(mut e) => {
+                e.get_mut().countries.push(currency.countries.remove(0));
+            }
+            Entry::Vacant(e) => {
+                e.insert(currency);
+            }
+        };
     }
 
     let out_dir = env::var("OUT_DIR").unwrap();
@@ -46,36 +52,26 @@ fn main() {
     let mut currencies = std::fs::File::create(&currencies_path)
         .expect("Can't create currencies.rs");
 
-    let phf_cur_code_path = std::path::Path::new(&out_dir).join("phf_cur_code.rs");
-    let mut phf_cur_code = std::fs::File::create(&phf_cur_code_path)
-        .expect("Can't create phf_cur_code.rs");
+    let phf_cur_path = std::path::Path::new(&out_dir).join("phf_cur.rs");
+    let mut phf_cur = std::fs::File::create(&phf_cur_path).expect("Can't create phf_cur.rs");
 
-    let phf_currencies_path = std::path::Path::new(&out_dir).join("phf_currencies.rs");
-    let mut phf_currencies = std::fs::File::create(&phf_currencies_path).unwrap();
+    writeln!(&mut currencies, "currency! {{ Currency;\n").unwrap();
 
-    writeln!(&mut currencies, "currency! {{ CurrencyCode;\n").unwrap();
-
-    write!(&mut phf_cur_code,
-           "pub static CURRENCY_CODE: phf::Map<&'static str, CurrencyCode> = ")
+    write!(&mut phf_cur,
+           "static CURRENCY: phf::Map<&'static str, Currency> = ")
             .unwrap();
-    let mut cur_code_map = phf_codegen::Map::new();
-    cur_code_map.phf_path("phf");
-
-    write!(&mut phf_currencies,
-           "pub static CURRENCIES: phf::Map<&'static str, Currency<'static>> = ")
-            .unwrap();
-    let mut currencies_map = phf_codegen::Map::new();
-    currencies_map.phf_path("phf");
+    let mut cur_map = phf_codegen::Map::new();
+    cur_map.phf_path("phf");
 
     for (code, currency) in xml_currencies {
-        let cur_code_str = String::from("CurrencyCode::") + &code;
+        let cur_str = String::from("Currency::") + &code;
 
-        cur_code_map.entry(code.clone(), &cur_code_str);
+        cur_map.entry(code.clone(), &cur_str);
         writeln!(&mut currencies,
-                 concat!("{code}({code}_REF) {{\n",
-                         "    code: {code:?},\n",
+                 concat!("{code} {{\n",
                          "    name: {name:?},\n",
                          "    countries: &[{countries}],\n",
+                         "    _countries_str: {countries_str:?},\n",
                          "    fund: {fund},\n",
                          "    number: {number},\n",
                          "    minor_units: {minor_units:?},\n",
@@ -87,18 +83,16 @@ fn main() {
                                   .map(|s| format!("{:?}", s))
                                   .collect::<Vec<_>>()
                                   .join(", "),
+                 countries_str = countries_str(&*currency.countries) + ".",
                  fund = currency.fund,
                  number = currency.number,
                  minor_units = currency.minor_units)
                 .unwrap();
-        currencies_map.entry(code.clone(), &code);
     }
 
     writeln!(&mut currencies, "}}").unwrap();
-    cur_code_map.build(&mut phf_cur_code).unwrap();
-    writeln!(&mut phf_cur_code, ";").unwrap();
-    currencies_map.build(&mut phf_currencies).unwrap();
-    writeln!(&mut phf_currencies, ";").unwrap();
+    cur_map.build(&mut phf_cur).unwrap();
+    writeln!(&mut phf_cur, ";").unwrap();
 }
 
 struct Currencies<'a, B>
@@ -187,5 +181,25 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
             }
             self.buf.clear();
         }
+    }
+}
+
+fn countries_str(countries: &[String]) -> String {
+    let len = countries.len();
+    if len == 1 {
+        countries[0].clone()
+    } else if len == 2 {
+        let mut out = String::new();
+        out.push_str(&countries[0]);
+        out.push_str(" and ");
+        out.push_str(&countries[1]);
+        out
+    } else if let Some((last, init)) = countries.split_last() {
+        let mut out = init.join(", ");
+        out.push_str(", and ");
+        out.push_str(last);
+        out
+    } else {
+        String::from("nowhere")
     }
 }
