@@ -1,12 +1,18 @@
 [package]
 authors = ["Brayden Banks <bb010g@gmail.com>"]
 build = "build.rs"
-description = "ISO 4217–compliant currency library"
+categories = []
+description = "ISO-4217–compliant currency library"
+documentation = "https://docs.rs/penny/0.1.0/penny"
+keywords = ["currency", "iso-4217", "money"]
 license = "MIT"
 name = "penny"
 readme = "README.md"
 repository = "https://github.com/bb010g/penny"
 version = "0.1.0"
+
+[badges.travis-ci]
+repository = "bb010g/penny"
 
 [build-dependencies]
 phf_codegen = "0.7.21"
@@ -18,7 +24,7 @@ phf = "0.7.21"
 
 [dependencies.clippy]
 optional = true
-version = "*"
+version = "^0"
 
 [dependencies.serde]
 optional = true

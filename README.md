@@ -2,7 +2,7 @@
 
 [API documentation][api-docs] | [Changelog][changelog]
 
-Penny is an ISO 4217–based currency library for Rust. It's not quite ready yet,
+Penny is an ISO-4217–based currency library for Rust. It's not quite ready yet,
 but should work well enough if you're using [Baimax][baimax] or willing to deal
 with a bit of breakage.
 
