@@ -1,15 +1,15 @@
 [package]
 authors = ["Brayden Banks <bb010g@gmail.com>"]
 build = "build.rs"
-categories = []
+categories = ["no-std"]
 description = "ISO-4217–compliant currency library"
-documentation = "https://docs.rs/penny/0.1.0/penny"
-keywords = ["currency", "iso-4217", "money"]
+documentation = "https://docs.rs/penny/0.2.0/penny"
+keywords = ["currency", "iso-4217", "money", "no_std"]
 license = "MIT"
 name = "penny"
 readme = "README.md"
 repository = "https://github.com/bb010g/penny"
-version = "0.1.0"
+version = "0.2.0"
 
 [badges.travis-ci]
 repository = "bb010g/penny"
