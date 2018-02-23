@@ -16,7 +16,7 @@ macro_rules! currency {
          minor_units: $minor_units:expr,
      },)*) => {
         /// The set of active currencies and funds codes.
-        #[derive(Debug, Copy, Clone, PartialEq, Eq)]
+        #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
         #[cfg_attr(feature="serde-serialize", derive(Serialize, Deserialize))]
         pub enum $currency {
             $(
