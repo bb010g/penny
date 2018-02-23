@@ -3,7 +3,9 @@ extern crate quick_xml;
 
 use std::collections::btree_map::{BTreeMap, Entry};
 use std::env;
+use std::fs::File;
 use std::io::{BufRead, Write};
+use std::path::Path;
 use std::str;
 
 use quick_xml::events::Event;
@@ -48,12 +50,11 @@ fn main() {
 
     let out_dir = env::var("OUT_DIR").unwrap();
 
-    let currencies_path = std::path::Path::new(&out_dir).join("currencies.rs");
-    let mut currencies =
-        std::fs::File::create(&currencies_path).expect("Can't create currencies.rs");
+    let currencies_path = Path::new(&out_dir).join("currencies.rs");
+    let mut currencies = File::create(&currencies_path).expect("Can't create currencies.rs");
 
-    let phf_cur_path = std::path::Path::new(&out_dir).join("phf_cur.rs");
-    let mut phf_cur = std::fs::File::create(&phf_cur_path).expect("Can't create phf_cur.rs");
+    let phf_cur_path = Path::new(&out_dir).join("phf_cur.rs");
+    let mut phf_cur = File::create(&phf_cur_path).expect("Can't create phf_cur.rs");
 
     writeln!(&mut currencies, "currency! {{ Currency;\n").unwrap();
 
@@ -138,7 +139,7 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
                         fund = e.attributes()
                             .find(|r| {
                                 r.as_ref()
-                                    .map(|a| a.key == b"IsFund" && a.value == b"true")
+                                    .map(|a| a.key == &b"IsFund"[..] && a.value == &b"true"[..])
                                     .unwrap_or(false)
                             })
                             .is_some()
@@ -153,7 +154,10 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
                     Tag::CurrencyName => name = String::from_utf8(e.to_vec()).unwrap(),
                     Tag::Code => code = String::from_utf8(e.to_vec()).unwrap(),
                     Tag::Number => num = str::from_utf8(&e).unwrap().parse().unwrap(),
-                    Tag::Units => units = str::from_utf8(&e).unwrap().parse().ok(),
+                    Tag::Units => match str::from_utf8(&e).unwrap() {
+                        "N.A." => (),
+                        s => units = Some(s.parse().expect(&format!("{} isn't u8", s))),
+                    },
                 },
                 Ok(Event::End(e)) => match e.name() {
                     b"CcyNtry" => {
