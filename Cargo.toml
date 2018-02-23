@@ -21,20 +21,10 @@ quick-xml = "0.7.0"
 [dependencies]
 mitochondria = "1.1.2"
 phf = "0.7.21"
-
-[dependencies.clippy]
-optional = true
-version = "^0"
-
-[dependencies.serde]
-optional = true
-version = "1.0.8"
-
-[dependencies.serde_derive]
-optional = true
-version = "1.0.8"
+serde = { version = "1.0.8", optional = true }
+serde_derive = { version = "1.0.8", optional = true }
 
 [features]
-default = ["serde-serialize"]
-lint = ["clippy"]
+default = ["serde-serialize", "std"]
 serde-serialize = ["serde", "serde_derive"]
+std = []

@@ -59,7 +59,7 @@ fn main() {
 
     write!(
         &mut phf_cur,
-        "static CURRENCY: phf::Map<&'static str, Currency> = "
+        "pub static CURRENCY: phf::Map<&'static str, Currency> = "
     ).unwrap();
     let mut cur_map = phf_codegen::Map::new();
     cur_map.phf_path("phf");

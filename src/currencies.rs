@@ -1,8 +1,6 @@
 use std::fmt;
 use std::str::FromStr;
 
-use phf;
-
 use CurrencyInfo;
 
 macro_rules! currency {
@@ -16,7 +14,7 @@ macro_rules! currency {
          minor_units: $minor_units:expr,
      },)*) => {
         /// The set of active currencies and funds codes.
-        #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
+        #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
         #[cfg_attr(feature="serde-serialize", derive(Serialize, Deserialize))]
         pub enum $currency {
             $(
@@ -38,7 +36,7 @@ macro_rules! currency {
             type Err = ();
 
             fn from_str(s: &str) -> Result<Self, Self::Err> {
-                CURRENCY.get(s).map(|c| *c).ok_or(())
+                CURRENCY.get(s).cloned().ok_or(())
             }
         }
         impl $currency {
@@ -63,4 +61,10 @@ macro_rules! currency {
 
 include!(concat!(env!("OUT_DIR"), "/currencies.rs"));
 
-include!(concat!(env!("OUT_DIR"), "/phf_cur.rs"));
+#[cfg_attr(feature="cargo-clippy", allow(unreadable_literal))]
+mod phf_cur {
+    use super::Currency;
+    use phf;
+    include!(concat!(env!("OUT_DIR"), "/phf_cur.rs"));
+}
+pub use self::phf_cur::CURRENCY;

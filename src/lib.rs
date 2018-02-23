@@ -7,9 +7,11 @@ list][list-one].
 [list-one]: https://www.currency-iso.org/en/home/tables/table-a1.html
 */
 
-#![cfg_attr(feature="lint", feature(plugin))]
-#![cfg_attr(feature="lint", plugin(clippy))]
+#![cfg_attr(not(feature="std"), no_std)]
 #![warn(missing_docs)]
+
+#[cfg(not(feature="std"))]
+extern crate core as std;
 
 extern crate mitochondria;
 extern crate phf;
@@ -72,7 +74,7 @@ impl CurrencyInfo {
 pub struct Money {
     amount: i64,
     currency: Currency,
-    #[serde(skip)]
+    #[cfg_attr(feature = "serde-serialize", serde(skip))]
     currency_info: OnceCell<&'static CurrencyInfo>,
 }
 
