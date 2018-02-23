@@ -131,59 +131,51 @@ impl<'a, B: BufRead> Iterator for Currencies<'a, B> {
 
         loop {
             match self.reader.read_event(&mut self.buf) {
-                Ok(Event::Start(ref e)) => {
-                    match e.name() {
-                        b"CtryNm" => tag = Tag::CountryName,
-                        b"CcyNm" => {
-                            tag = Tag::CurrencyName;
-                            fund = e.attributes()
-                                .find(|r| {
-                                    r.as_ref()
-                                        .map(|a| a.key == b"IsFund" && a.value == b"true")
-                                        .unwrap_or(false)
-                                })
-                                .is_some()
+                Ok(Event::Start(ref e)) => match e.name() {
+                    b"CtryNm" => tag = Tag::CountryName,
+                    b"CcyNm" => {
+                        tag = Tag::CurrencyName;
+                        fund = e.attributes()
+                            .find(|r| {
+                                r.as_ref()
+                                    .map(|a| a.key == b"IsFund" && a.value == b"true")
+                                    .unwrap_or(false)
+                            })
+                            .is_some()
+                    }
+                    b"Ccy" => tag = Tag::Code,
+                    b"CcyNbr" => tag = Tag::Number,
+                    b"CcyMnrUnts" => tag = Tag::Units,
+                    _ => (),
+                },
+                Ok(Event::Text(e)) => match tag {
+                    Tag::CountryName => country = String::from_utf8(e.to_vec()).unwrap(),
+                    Tag::CurrencyName => name = String::from_utf8(e.to_vec()).unwrap(),
+                    Tag::Code => code = String::from_utf8(e.to_vec()).unwrap(),
+                    Tag::Number => num = str::from_utf8(&e).unwrap().parse().unwrap(),
+                    Tag::Units => units = str::from_utf8(&e).unwrap().parse().ok(),
+                },
+                Ok(Event::End(e)) => match e.name() {
+                    b"CcyNtry" => {
+                        if code != "" {
+                            return Some(Currency {
+                                code: code.clone(),
+                                name: name.clone(),
+                                countries: vec![country.to_owned()],
+                                fund: fund,
+                                number: num,
+                                minor_units: units,
+                            });
                         }
-                        b"Ccy" => tag = Tag::Code,
-                        b"CcyNbr" => tag = Tag::Number,
-                        b"CcyMnrUnts" => tag = Tag::Units,
-                        _ => (),
                     }
-                }
-                Ok(Event::Text(e)) => {
-                    match tag {
-                        Tag::CountryName => country = String::from_utf8(e.to_vec()).unwrap(),
-                        Tag::CurrencyName => name = String::from_utf8(e.to_vec()).unwrap(),
-                        Tag::Code => code = String::from_utf8(e.to_vec()).unwrap(),
-                        Tag::Number => num = str::from_utf8(&e).unwrap().parse().unwrap(),
-                        Tag::Units => units = str::from_utf8(&e).unwrap().parse().ok(),
-                    }
-                }
-                Ok(Event::End(e)) => {
-                    match e.name() {
-                        b"CcyNtry" => {
-                            if code != "" {
-                                return Some(Currency {
-                                    code: code.clone(),
-                                    name: name.clone(),
-                                    countries: vec![country.to_owned()],
-                                    fund: fund,
-                                    number: num,
-                                    minor_units: units,
-                                });
-                            }
-                        }
-                        _ => (),
-                    }
-                }
+                    _ => (),
+                },
                 Ok(Event::Eof) => return None,
-                Err(e) => {
-                    panic!(
-                        "Error at position {}: {:?}",
-                        self.reader.buffer_position(),
-                        e
-                    )
-                }
+                Err(e) => panic!(
+                    "Error at position {}: {:?}",
+                    self.reader.buffer_position(),
+                    e
+                ),
                 _ => (),
             }
             self.buf.clear();

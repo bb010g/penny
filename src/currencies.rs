@@ -61,7 +61,7 @@ macro_rules! currency {
 
 include!(concat!(env!("OUT_DIR"), "/currencies.rs"));
 
-#[cfg_attr(feature="cargo-clippy", allow(unreadable_literal))]
+#[cfg_attr(feature = "cargo-clippy", allow(unreadable_literal))]
 mod phf_cur {
     use super::Currency;
     use phf;

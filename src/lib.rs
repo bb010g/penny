@@ -7,10 +7,10 @@ list][list-one].
 [list-one]: https://www.currency-iso.org/en/home/tables/table-a1.html
 */
 
-#![cfg_attr(not(feature="std"), no_std)]
+#![cfg_attr(not(feature = "std"), no_std)]
 #![warn(missing_docs)]
 
-#[cfg(not(feature="std"))]
+#[cfg(not(feature = "std"))]
 extern crate core as std;
 
 extern crate mitochondria;
